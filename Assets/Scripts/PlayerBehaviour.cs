@@ -18,7 +18,7 @@ public class PlayerBehaviour : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
-    [HideInInspector]
+    
     public bool canMove = true;
 
     void Start()
@@ -70,5 +70,17 @@ public class PlayerBehaviour : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+    }
+    public void CursorActive()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        canMove = false;
+    }
+    public void CursorInactive()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        canMove = true;
     }
 }

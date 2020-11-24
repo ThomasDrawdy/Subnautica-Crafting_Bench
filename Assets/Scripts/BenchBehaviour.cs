@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class BenchBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-
+   
     public Animator ani;
+    public GameObject controller;
+    private bool open = false;
 
-    void Start()
+    public void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetKeyDown(KeyCode.Q) && open)
+        {
+            Close();
+        }
     }
 
     public void Open()
     {
 
         ani.SetBool("E", true);
+        open = true;
+        controller.GetComponent<Menu>().OpenMenu();
+    }
+
+    public void Close()
+    {
+        ani.SetBool("E", false);
+        controller.GetComponent<Menu>().CloseMenu();
 
     }
 
