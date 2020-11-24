@@ -1,11 +1,29 @@
-fileFormatVersion: 2
-guid: 7dc545ff253ae5240abff60363432ecd
-MonoImporter:
-  externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BenchBehaviour : MonoBehaviour
+{
+    // Start is called before the first frame update
+
+    public Animator ani;
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void Open()
+    {
+
+        ani.SetBool("", true);
+
+    }
+
+}

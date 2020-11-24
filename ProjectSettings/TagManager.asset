@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Object
+  - Side
+  - Tier1
+  - Tier2
+  - Tier3
   layers:
   - Default
   - TransparentFX
