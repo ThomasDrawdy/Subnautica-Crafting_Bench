@@ -12,6 +12,8 @@ public class RaycastInteract : MonoBehaviour
 
     public Image uiCrosshair;
 
+
+
     void Update()
     {
         RaycastHit hit;
@@ -40,10 +42,13 @@ public class RaycastInteract : MonoBehaviour
     }
     void CrosshairActive()
     {
-        uiCrosshair.color = Color.red;
+        if (Cursor.visible == false)
+            uiCrosshair.enabled = true;
+        else
+            uiCrosshair.enabled = false;
     }
     void CrosshairNormal()
     {
-        uiCrosshair.color = Color.white;
+        uiCrosshair.enabled = false;
     }
 }

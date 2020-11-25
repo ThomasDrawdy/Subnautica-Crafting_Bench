@@ -9,6 +9,8 @@ public class MenuBehaviour : MonoBehaviour
 
     private List<GameObject> tierOne = new List<GameObject>();
     private List<GameObject> tierTwo = new List<GameObject>();
+    public AudioClip clickAudio;
+    public AudioSource audioSource;
 
 
     private void Start()
@@ -45,6 +47,7 @@ public class MenuBehaviour : MonoBehaviour
             g.SetActive(false);
         }
         tierOne[side].SetActive(true);
+        audioSource.PlayOneShot(clickAudio);
     }
 
     public void TierOne(int side)
@@ -54,7 +57,20 @@ public class MenuBehaviour : MonoBehaviour
             g.SetActive(false);
         }
         tierTwo[side].SetActive(true);
+        audioSource.PlayOneShot(clickAudio);
+
     }
 
+    public void Close()
+    {
+        foreach (GameObject g in tierOne)
+        {
+            g.SetActive(false);
+        }
+        foreach (GameObject g in tierTwo)
+        {
+            g.SetActive(false);
+        }
+    }
     
 }

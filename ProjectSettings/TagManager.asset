@@ -9,6 +9,7 @@ TagManager:
   - Tier1
   - Tier2
   - Tier3
+  - Spawnable
   layers:
   - Default
   - TransparentFX
