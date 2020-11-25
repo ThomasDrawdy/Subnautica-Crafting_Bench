@@ -8,7 +8,6 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject menu;
-    private bool menuOpen = false;
     public GameObject bench;
 
     void Start()
@@ -23,6 +22,7 @@ public class Menu : MonoBehaviour
     }
     public void CloseMenu()
     {
+        menu.GetComponent<MenuBehaviour>().Close();
         menu.SetActive(false);
         player.GetComponent<PlayerBehaviour>().CursorInactive();
         
